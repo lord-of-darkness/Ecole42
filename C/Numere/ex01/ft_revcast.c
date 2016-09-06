@@ -30,7 +30,7 @@ char	ft_revcast(int n)
 	str[i + 1] =(char*)("\0");
 	while (n)
 	{
-		str[i] = n % 10;
+		str[i] = (char*)(n % 10);
 		n /= 10;
 	}
 	return (str[i]);
