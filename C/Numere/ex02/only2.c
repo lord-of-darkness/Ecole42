@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 15:17:32 by                   #+#    #+#             */
-/*   Updated: 2016/09/08 15:30:39 by                  ###   ########.fr       */
+/*   Updated: 2016/09/09 11:33:19 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,34 @@ int		len(int n)
 	while (m)
 	{
 		m /= 10;
-		i++;
+		++i;
 	}
-	return (0);
+	return (i);
 }
 
 int		only2(int n) 
 {
 	int *nb;
-	int i;
+	int l;
 
-	nb = malloc(sizeof(int) * len(n));
-	i = 0;
+	nb = malloc(sizeof(int) * len(n) + 1);
+	l = 0;
+	printf("%d \n", len(n));
 	while (n)
 	{
-		nb[i] = n % 10;
+		nb[l] = n % 10;
 		n /= 10;
-		i++;
+		++l;
 	}
-	while(i)
+	printf("%d \n", l);
+	l = 0;
+	while(nb[l])
 	{
-		if (nb[i] != 2)
-			printf("%d", nb[i]);
-		i--;
+		if (nb[l] != 2)
+			printf("%d", nb[l]);
+		l++;
 	}
+	printf("\n");
 	return (0);
 }
 
